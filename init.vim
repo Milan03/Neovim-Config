@@ -133,6 +133,8 @@ EOF
 " Autocompletion setup
 lua << EOF
 local cmp = require'cmp'
+local luasnip = require'luasnip'
+
 cmp.setup({
   snippet = {
     expand = function(args)
@@ -140,6 +142,20 @@ cmp.setup({
     end,
   },
   mapping = {
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.confirm({ select = true })
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
@@ -161,7 +177,7 @@ cmp.setup.cmdline('/', {
   }
 })
 
--- Use cmdline & path source for ':'
+-- Use cmdline & path source for `:`
 cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
@@ -218,7 +234,7 @@ set expandtab
 " Make <Tab> behave like 4 spaces
 set softtabstop=4
 
-" Allow screen to scroll past bottom of fele
+" Allow screen to scroll past bottom of file
 set virtualedit=onemore
 
 " Automatically change the working directory to the file's directory
