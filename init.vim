@@ -218,6 +218,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Keybinding to swap contents of vertical splits
+nnoremap <leader>s :wincmd r<CR>
+
 " Indent selected lines with Tab in Visual Mode
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
