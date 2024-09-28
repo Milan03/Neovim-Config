@@ -259,3 +259,7 @@ set backupdir=~/.config/nvim/backup//
 " Set directory for undo files
 set undodir=~/.config/nvim/undo//
 set undofile
+
+" Allow insert highlighting and Ctrl-C/Ctrl-V
+set mouse=a
+set clipboard=unnamedplus
