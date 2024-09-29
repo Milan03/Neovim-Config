@@ -219,6 +219,11 @@ lua << EOF
 require('neogit').setup{}
 EOF
 
+" Enter brackets after insertion
+inoremap { {}<Left>
+inoremap ( ()<Left>
+inoremap [ []<Left>
+
 " Remap window navigation to simpler keys
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
