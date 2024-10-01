@@ -224,6 +224,9 @@ inoremap { {}<Left>
 inoremap ( ()<Left>
 inoremap [ []<Left>
 
+" Copy current line and paste below in insert mode
+inoremap <C-d> <Esc>YpA
+
 " Remap window navigation to simpler keys
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
