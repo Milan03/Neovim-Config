@@ -236,6 +236,9 @@ nnoremap <C-l> <C-w>l
 " Keybinding to swap contents of vertical splits
 nnoremap <leader>s :wincmd r<CR>
 
+" Keybinding to highlight all with Ctrl-a
+nnoremap <C-a> ggVG
+
 " Indent selected lines with Tab in Visual Mode
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
